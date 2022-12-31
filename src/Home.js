@@ -22,7 +22,7 @@ function Home() {
             <Link to = '/reciever'>
             <div className='Login-Card'>
               <img src={reciever} className="Login-Image" alt="reciever" />
-              <p> RECEIVER</p>
+              <p> RECIEVER</p>
             </div>
             </Link>
 
