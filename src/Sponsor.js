@@ -1,5 +1,5 @@
 import connectWallet from './utils/Connect'
-import { Link } from 'react-router-dom';
+import { Routes,Route, Link } from 'react-router-dom';
 import { useEffect } from 'react';
 import {FaPlus,FaBook,FaSearch} from 'react-icons/fa' 
 const Sponsor = ()=>{
@@ -10,7 +10,13 @@ const Sponsor = ()=>{
     
     return(
         <>
-            <h1>Sponsor Options</h1>
+            <Routes>
+                <Route path='/sponsor/add-fund' element='{}' />
+                <Route path='/sponsor/distribute' element='{}' />
+                <Route path='/sponsor/monitor' element='{}' />
+            </Routes>
+
+            <h1>Sponsor's Options</h1>
 
             <div className='Option-Container'>
 
@@ -30,7 +36,7 @@ const Sponsor = ()=>{
                             <FaBook size='50px' color='black'  />
                         </div>
                         
-                        <p> View Reciept </p>
+                        <p> Distribute </p>
                     </div>
                 </Link> 
 

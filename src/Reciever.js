@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import connectWallet from "./utils/Connect";
 import { Link } from 'react-router-dom';
-import {FaMoneyBill,FaBook,FaSearch} from 'react-icons/fa';
+import {FaCoins,FaMoneyCheck,FaHistory} from 'react-icons/fa';
 
 const Reciever = ()=>{
     useEffect(()=>{
@@ -15,7 +15,7 @@ const Reciever = ()=>{
                 <Link to = ''>
                     <div className='Option-Button' >
                         <div className='Option-Icon'>
-                            <FaMoneyBill size='50px' color='black' />
+                            <FaCoins size='50px' color='black' />
                         </div>
                         
                         <p> Pay </p>
@@ -25,20 +25,20 @@ const Reciever = ()=>{
                 <Link to = ''>
                     <div className='Option-Button' >
                         <div className='Option-Icon'>
-                            <FaBook size='50px' color='black'  />
+                            <FaMoneyCheck size='50px' color='black'  />
                         </div>
                         
-                        <p> View Reciept </p>
+                        <p> Check balance </p>
                     </div>
                 </Link> 
 
                 <Link to = ''>
                     <div className='Option-Button' >
                         <div className='Option-Icon'>
-                            <FaSearch size='50px' color='black'  />
+                            <FaHistory size='50px' color='black'  />
                         </div>
                         
-                        <p> Monitor </p>
+                        <p> History </p>
                     </div>
                 </Link> 
 
