@@ -41,7 +41,7 @@ const Sponsor = ()=>{
                     </div>
                 </Link>  */}
 
-                <Link to = ''>
+                <Link to = 'monitor'>
                     <div className='Option-Button' >
                         <div className='Option-Icon'>
                             <FaSearch size='50px' color='black'  />
