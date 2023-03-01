@@ -121,6 +121,36 @@ a:link{
   filter: drop-shadow(0 0 4px grey);
 }
 
+.txn-box{
+  display: flex;
+  max-width: inherit;
+  overflow-y: hidden;
+  border-bottom: 2px solid #FFF;
+  justify-content: center;
+}
+.Tid{
+  margin: 3%;
+}
+.transfer{
+  text-align: left;
+  margin-right: 3%;
+}
+.TX{
+  background-color: white;
+  border-radius: 50%;
+  text-align: center;
+  color: #000;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  padding: 10px;;
+}
+.vendor-header{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
