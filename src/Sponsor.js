@@ -1,7 +1,8 @@
 import connectWallet from './utils/Connect'
 import { Routes,Route, Link } from 'react-router-dom';
 import { useEffect } from 'react';
-import {FaPlus,FaBook,FaSearch} from 'react-icons/fa' 
+import {FaPlus,FaSearch} from 'react-icons/fa' 
+import AddFund from "./Sponsor-Pages/AddFund"
 const Sponsor = ()=>{
 
     useEffect(()=>{
@@ -11,7 +12,7 @@ const Sponsor = ()=>{
     return(
         <>
             <Routes>
-                <Route path='/sponsor/add-fund' element='{}' />
+                <Route path='/add-fund' element={<AddFund/>} />
                 <Route path='/sponsor/distribute' element='{}' />
                 <Route path='/sponsor/monitor' element='{}' />
             </Routes>
@@ -20,7 +21,7 @@ const Sponsor = ()=>{
 
             <div className='Option-Container'>
 
-                <Link to = ''>
+                <Link to = 'add-fund'>
                     <div className='Option-Button' >
                         <div className='Option-Icon'>
                             <FaPlus size='50px' color='black' />

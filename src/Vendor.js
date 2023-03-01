@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import connectWallet from "./utils/Connect";
-import { Link } from 'react-router-dom';
 import {FaMoneyCheckAlt,FaHistory} from 'react-icons/fa';
+import { Routes,Route, Link } from 'react-router-dom';
 
 const Vendor = ()=>{
     
