@@ -11,6 +11,11 @@ const Vendor = ()=>{
 
     return(
         <>
+            <Routes>
+                <Route path='/sponsor/balance' element='{}' />
+                <Route path='/sponsor/transactions' element='{}' />
+            </Routes>
+
             <h1>Vendor Options</h1>
             <div className='Option-Container'>
 
@@ -20,7 +25,7 @@ const Vendor = ()=>{
                             <FaMoneyCheckAlt size='50px' color='black' />
                         </div>
                         
-                        <p> Check Balance </p>
+                        <p> Redeem </p>
                     </div>
                 </Link> 
 

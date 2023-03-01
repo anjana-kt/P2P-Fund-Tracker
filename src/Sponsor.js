@@ -30,7 +30,7 @@ const Sponsor = ()=>{
                     </div>
                 </Link> 
 
-                <Link to = ''>
+                {/* <Link to = ''>
                     <div className='Option-Button' >
                         <div className='Option-Icon'>
                             <FaBook size='50px' color='black'  />
@@ -38,7 +38,7 @@ const Sponsor = ()=>{
                         
                         <p> Distribute </p>
                     </div>
-                </Link> 
+                </Link>  */}
 
                 <Link to = ''>
                     <div className='Option-Button' >
