@@ -9,6 +9,7 @@ import Reciever from './Reciever'
 import Vendor from './Vendor'
 import AddFund from './Sponsor-Pages/AddFund'
 import Monitor from './Sponsor-Pages/Monitor'
+import History from './Vendors-Pages/History'
 
 document.title="Fund Track";
 
@@ -22,6 +23,7 @@ export default function App() {
           <Route path="vendor" element={<Vendor />} />
           <Route path='sponsor/add-fund' element={<AddFund/>} />
           <Route path='sponsor/monitor' element={<Monitor/>} />
+          <Route path='vendor/history' element={<History/>} />
       </Routes>
     </BrowserRouter>
   );

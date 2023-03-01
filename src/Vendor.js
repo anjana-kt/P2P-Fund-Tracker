@@ -11,11 +11,7 @@ const Vendor = ()=>{
 
     return(
         <>
-            <Routes>
-                <Route path='/sponsor/balance' element='{}' />
-                <Route path='/sponsor/transactions' element='{}' />
-            </Routes>
-
+           
             <h1>Vendor Options</h1>
             <div className='Option-Container'>
 
@@ -29,7 +25,7 @@ const Vendor = ()=>{
                     </div>
                 </Link> 
 
-                <Link to = ''>
+                <Link to = 'history'>
                     <div className='Option-Button' >
                         <div className='Option-Icon'>
                             <FaHistory size='50px' color='black'  />
