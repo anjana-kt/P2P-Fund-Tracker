@@ -21,6 +21,8 @@ const AddFund=()=>{
                 <input type="checkbox" id="1" value="1" />
                 <label for="1" >Amount for user 1 </label>
             </div>
+            
+            <button className="donate" onClick={''}>SEND</button>
         </>
     );
 }
