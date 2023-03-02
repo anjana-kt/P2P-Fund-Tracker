@@ -12,7 +12,7 @@ const Reciever = ()=>{
             <h1>Reciever Options</h1>
             <div className='Option-Container'>
 
-                <Link to = ''>
+                <Link to = 'pay'>
                     <div className='Option-Button' >
                         <div className='Option-Icon'>
                             <FaCoins size='50px' color='black' />
@@ -22,7 +22,7 @@ const Reciever = ()=>{
                     </div>
                 </Link> 
 
-                <Link to = ''>
+                {/* <Link to = ''>
                     <div className='Option-Button' >
                         <div className='Option-Icon'>
                             <FaMoneyCheck size='50px' color='black'  />
@@ -30,9 +30,9 @@ const Reciever = ()=>{
                         
                         <p> Check balance </p>
                     </div>
-                </Link> 
+                </Link>  */}
 
-                <Link to = ''>
+                <Link to = 'history'>
                     <div className='Option-Button' >
                         <div className='Option-Icon'>
                             <FaHistory size='50px' color='black'  />
