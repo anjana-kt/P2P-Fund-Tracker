@@ -120,20 +120,14 @@ a:link{
   -webkit-filter: drop-shadow(0 0 2px grey);
   filter: drop-shadow(0 0 4px grey);
 }
-
+.txn-data{
+  margin-top: 5%;
+}
 .txn-box{
   display: flex;
   max-width: inherit;
-  overflow-y: hidden;
-  border-bottom: 2px solid #FFF;
   justify-content: center;
-}
-.Tid{
-  margin: 3%;
-}
-.transfer{
-  text-align: left;
-  margin-right: 3%;
+  border-top: #fff solid 1px;
 }
 .TX{
   background-color: white;
@@ -145,10 +139,50 @@ a:link{
   line-height: 30px;
   padding: 10px;;
 }
+.Tid{
+  margin: 3%;
+}
+.transfer{
+  text-align: left;
+  margin-right: 3%;
+}
 .vendor-header{
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: 7%;
+}
+.select-container{
+  overflow-y: scroll;
+}
+.select-box{
+  display: flex;
+  max-width: inherit;
+  justify-content: center;
+  margin: 1%;
+}
+.select-checkbox{
+  display: flex;
+  text-align: left;
+}
+.avatar{
+  max-width: 70px;
+  max-height: 70px;
+}
+button, .donate{
+  padding: 1% 4%;
+  background-color: rgb(154, 221, 200);
+  font-size: 20px;
+}
+.redeem{
+  margin-left: 8%;
+  margin-top: 0;
+}
+.pay-form{
+  text-align: left;
+  font-size: 25px;
+  justify-content: center;
+  margin-left: 45%;
 }
 
 @keyframes App-logo-spin {
