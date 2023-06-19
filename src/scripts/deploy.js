@@ -10,8 +10,8 @@ async function main() {
   await pp.deployed();
   console.log("PP deployed to:", pp.address);
 
-  var k = await pp.addStudent('0x8626f6940E2eb28930eFb4CeF49B2d1F2C9C1199',"shashi",10,2);
-  k = await pp.addStudent('0x90F79bf6EB2c4f870365E785982E1f101E93b906',"soman",10,2);
+  var k = await pp.addStudent('0x70997970C51812dc3A010C7d01b50e0d17dc79C8',"shashi",10,2);
+  k = await pp.addStudent('0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC',"soman",10,2);
   k = await pp.getRegisteredCount();
   console.log(Number(k));
   k= await pp.addSponsor('0x15d34AAf54267DB7D7c367839AAf71A00a2C6A65')
@@ -19,8 +19,8 @@ async function main() {
   // k= await pp.withdraw();
   k= await pp.getStudentFromId(2);
   const options = {value:ethers.utils.parseEther("0.0001")};
-  k= await pp.payVendor("0x15d34AAf54267DB7D7c367839AAf71A00a2C6A65",10);
-  console.log(k.name);
+  //k= await pp.transfer("0x15d34AAf54267DB7D7c367839AAf71A00a2C6A65",1);
+  console.log(k);
 }
 
 main()

@@ -1,9 +1,9 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.0;
+pragma solidity ^0.8.13;
 
 contract Scholarship {
 
-    uint256 public registerCount = 0;
+    uint256 public registerCount;
 
     struct Student {
         uint256 id;
@@ -66,7 +66,7 @@ contract Scholarship {
         Student memory reg = Student(registerCount, _student, address(0), name, cgpa, 0, totalAmount, false);
         registeredStudents[_student] = reg;
         studentList[registerCount] = _student;
-        return 0;
+        return registerCount;
     }
 
     function getRegisteredCount() public view returns (uint256) {
@@ -106,5 +106,13 @@ contract Scholarship {
         require(success,"Call failed");
 
         emit PaymentMade(msg.sender, _vendor, _amount);
+    }
+    function transfer(address _to, uint256 _amount) public payable {
+        require(_to != address(0), "Invalid recipient address");
+        require(_amount > 0, "Invalid transfer amount");
+        require(msg.value >= _amount, "Insufficient Ether sent");
+
+        // Transfer Ether from sender to recipient
+        payable(_to).transfer(msg.value);
     }
 }
