@@ -95,9 +95,7 @@ function getStudentDetails(uint256 _id) public view returns (uint256, address, s
         student.totalAmount
     );
 }
-This function takes an input parameter _id, representing the ID of the student you want to retrieve details for. It first checks if the student address corresponding to the ID exists in the studentList mapping. If the address is valid, it retrieves the student details from the registeredStudents mapping using the student address and returns all the relevant fields as the output.
 
-You can add this function to your existing contract, and then you'll be able to call getStudentDetails by providing the student ID, and it will return the corresponding student's details.
 
 
 
