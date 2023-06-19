@@ -11,7 +11,7 @@ const AddFund=()=>{
 
     const provider = new ethers.providers.Web3Provider(window.ethereum);
     const signer = provider.getSigner();
-    const contract = new ethers.Contract(p2pAddress,p2pAbi,signer);
+    const contract = new ethers.Contract(p2pAddress,p2pAbi.abi,signer);
 
     var items=[];
     const [student, setStudent] = useState("");
