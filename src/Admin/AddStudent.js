@@ -27,9 +27,9 @@ const Form = () =>{
       alert("Connect to wallet!");
     }
 
-    //var k= await contract.addStudent(address,name,cgpa,amount);
+    var k= await contract.addStudent(address,name,cgpa,amount);
     // var k= await contract.getRegisteredCount();
-    var k = contract.withdraw()
+    // var k = contract.withdraw()
     console.log(k+"bla");
     console.log("Register count 1 "+k.toString())
     setLoading(false);

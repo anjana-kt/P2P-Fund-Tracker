@@ -67,6 +67,7 @@ contract Scholarship {
         Student memory reg = Student(registerCount, _student, address(0), name, cgpa, 0, totalAmount, false);
         registeredStudents[_student] = reg;
         studentList[registerCount] = _student;
+        scholarships[_student]=totalAmount;
         return registerCount;
     }
 
@@ -118,5 +119,16 @@ contract Scholarship {
 
         // Transfer Ether from sender to recipient
         payable(_to).transfer(msg.value);
+    }
+    function withdraw() public onlyStudent {
+        require(registeredStudents[msg.sender].got, "No scholarship received");
+
+        uint256 amount = scholarships[msg.sender];
+        require(amount > 0, "No scholarship balance");
+
+        scholarships[msg.sender] = 0;
+        registeredStudents[msg.sender].received -= amount;
+        registeredStudents[msg.sender].got = true;
+        registeredStudents[msg.sender].stu_address.transfer(amount);
     }
 }

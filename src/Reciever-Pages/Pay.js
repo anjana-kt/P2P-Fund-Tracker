@@ -34,7 +34,7 @@ export default function Pay(){
           alert("Connect to wallet!");
         }
 
-        await contract.transfer(canteen,Number(amount));
+        await contract.transfer("0x9965507D1a55bcC2695C58ba16FB37d819B0A4dc",Number(amount));
         await contract.getRegisteredCount();
     }
 

@@ -2,10 +2,17 @@ import { useEffect,useState } from "react";
 import connectWallet from "./utils/Connect";
 import {FaMoneyCheckAlt,FaHistory} from 'react-icons/fa';
 import { Routes,Route, Link,useNavigate} from 'react-router-dom';
-
+import { p2pAddress } from './config';
+import p2pAbi from './Abi.json'
+import { ethers } from 'ethers'
 const Vendor = ()=>{
 
+    const provider = new ethers.providers.Web3Provider(window.ethereum);
+    const signer = provider.getSigner();
+    const contract = new ethers.Contract(p2pAddress,p2pAbi.abi,signer);
+
     const redeem = async()=>{
+        await contract.withdraw();
     }
     
     const navigate=useNavigate();
