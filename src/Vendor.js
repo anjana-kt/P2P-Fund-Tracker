@@ -4,9 +4,12 @@ import {FaMoneyCheckAlt,FaHistory} from 'react-icons/fa';
 import { Routes,Route, Link,useNavigate} from 'react-router-dom';
 
 const Vendor = ()=>{
+
+    const redeem = async()=>{
+    }
     
     const navigate=useNavigate();
-
+    var url ='https://mumbai.polygonscan.com/address/'
 
     const [currentAccount, setCurrentAccount] = useState("");
 
@@ -18,12 +21,11 @@ const Vendor = ()=>{
     }, [])
 
     return(
-        <>
-           
+        <>          
             <h1>Vendor Options</h1>
             <div className='Option-Container'>
 
-                <Link to = ''>
+                <Link to = '' onClick={redeem}>
                     <div className='Option-Button' >
                         <div className='Option-Icon'>
                             <FaMoneyCheckAlt size='50px' color='black' />
@@ -33,7 +35,8 @@ const Vendor = ()=>{
                     </div>
                 </Link> 
 
-                <Link to = 'history'>
+                <Link to='' target="_blank">
+                    <a href={(url+currentAccount)}>
                     <div className='Option-Button' >
                         <div className='Option-Icon'>
                             <FaHistory size='50px' color='black'  />
@@ -41,6 +44,7 @@ const Vendor = ()=>{
                         
                         <p> History </p>
                     </div>
+                    </a>
                 </Link> 
             </div>
 

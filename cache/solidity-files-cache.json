@@ -2,8 +2,8 @@
   "_format": "hh-sol-cache-2",
   "files": {
     "/home/potato/mine/projects/p2p_fund_tracking/contracts/Scholarship.sol": {
-      "lastModificationDate": 1687187509311,
-      "contentHash": "50e567a3044641c1a722a93dd4687ed8",
+      "lastModificationDate": 1687193614235,
+      "contentHash": "b19bfed85bd69e35356710371aca065d",
       "sourceName": "contracts/Scholarship.sol",
       "solcConfig": {
         "version": "0.8.13",

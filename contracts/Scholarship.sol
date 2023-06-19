@@ -37,6 +37,7 @@ contract Scholarship {
 
     constructor() {
         owner = payable(msg.sender);
+        registerCount=0;
     }
 
     modifier onlyOwner() {
@@ -76,6 +77,9 @@ contract Scholarship {
     function getStudentFromId(uint256 id) public view returns (Student memory) {
         address temp = studentList[id];
         return registeredStudents[temp];
+    }
+    function getStudentFromAddress(address ad) public view returns (Student memory) {
+        return registeredStudents[ad];
     }
 
     function addSponsor(address _sponsor) public onlyOwner {

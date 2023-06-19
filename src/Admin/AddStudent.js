@@ -27,11 +27,11 @@ const Form = () =>{
       alert("Connect to wallet!");
     }
 
-    var k= await contract.addStudent(address,name,cgpa,amount);
-    k = await contract.registerCount;
-    // await contract.getRegisteredCount();
-    // console.log(n);
-    console.log("Register count 1 "+k)
+    //var k= await contract.addStudent(address,name,cgpa,amount);
+    // var k= await contract.getRegisteredCount();
+    var k = contract.withdraw()
+    console.log(k+"bla");
+    console.log("Register count 1 "+k.toString())
     setLoading(false);
     navigate(-1);
   };

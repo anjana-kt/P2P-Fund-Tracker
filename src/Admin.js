@@ -40,7 +40,7 @@ const Admin = ()=>{
                     </div>
                 </Link> 
 
-                <Link to = '/'>
+                {/* <Link to = '/'>
                     <div className='Option-Button' >
                         <div className='Option-Icon'>
                             <FaHistory size='50px' color='black'  />
@@ -48,7 +48,7 @@ const Admin = ()=>{
                         
                         <p>Check transactions</p>
                     </div>
-                </Link> 
+                </Link>  */}
 
             </div>
         </>
