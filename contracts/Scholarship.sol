@@ -7,7 +7,7 @@ contract Scholarship {
 
     struct Student {
         uint256 id;
-        address stu_address;
+        address payable stu_address;
         address donor;
         string name;
         string cgpa;
@@ -59,7 +59,7 @@ contract Scholarship {
         _;
     }
 
-    function addStudent(address _student, string memory name, string memory cgpa, uint256 totalAmount) public onlyOwner returns (uint256) {
+    function addStudent(address payable _student, string memory name, string memory cgpa, uint256 totalAmount) public onlyOwner returns (uint256) {
         require(!isStudent[_student], "This student is already registered");
         isStudent[_student] = true;
         registerCount += 1;
@@ -69,7 +69,7 @@ contract Scholarship {
         return 0;
     }
 
-    function getRegisteredCount() public view returns (uint) {
+    function getRegisteredCount() public view returns (uint256) {
         return registerCount;
     }
 
@@ -98,13 +98,12 @@ contract Scholarship {
         emit ScholarshipAwarded(_student, msg.sender, msg.value);
     }
 
-    function payVendor(address _vendor, uint256 _amount) public onlyStudent {
-        require(isVendor[_vendor], "Recipient must be a registered vendor");
+    function payVendor(address payable _vendor, uint256 _amount) public payable {
+        // require(isVendor[_vendor], "Recipient must be a registered vendor");
         require(_amount > 0, "Payment amount must be greater than zero");
-        require(scholarships[msg.sender] >= _amount, "Insufficient scholarship amount");
-
-        scholarships[msg.sender] -= _amount;
-        payable(_vendor).transfer(_amount);
+        // require(scholarships[msg.sender] >= _amount, "Insufficient scholarship amount");
+        (bool success,)=_vendor.call{value: _amount}("");
+        require(success,"Call failed");
 
         emit PaymentMade(msg.sender, _vendor, _amount);
     }

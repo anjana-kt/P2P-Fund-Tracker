@@ -1,6 +1,6 @@
 import avatar from "../images/avatar.png";
 import { p2pAddress } from '../config';
-import p2pAbi from '../Abi.json'
+import p2pAbi from '../NewAbi.json'
 import { ethers } from 'ethers';
 import { useEffect, useState } from 'react';
 const AddFund=()=>{
@@ -11,7 +11,7 @@ const AddFund=()=>{
 
     const provider = new ethers.providers.Web3Provider(window.ethereum);
     const signer = provider.getSigner();
-    const contract = new ethers.Contract(p2pAddress,p2pAbi.abi,signer);
+    const contract = new ethers.Contract(p2pAddress,p2pAbi,signer);
 
     var items=[];
     const [student, setStudent] = useState([]);
@@ -22,33 +22,33 @@ const AddFund=()=>{
 
     const displayAll=async()=>{
         console.log("Display called");
-        //debugger
-        var n = await contract.getRegisteredCount();
-        console.log("Length = "+n);
-        // n=Number(n);
-        // items=[]
-        // for (var i=1;i<=n;i++)
-        // {
-        //     console.log("Display");
-        //     const data = await contract.getStudentFromID(i);
-        //     console.log(data);
-        //     if (data.got == false)
-        //     {
-        //         let item = {
-        //             address:data.stu_address,
-        //             name:data.name,
-        //             cgpa:data.cgpa,
-        //             donor:data.donor,
-        //             total:data.totalAmount,
-        //          }
-        //          items.push(item);
-        //          console.log(item);
-        //     }
+        var n = await contract.getRegisteredCount()
+        console.log(n.toNumber())
+        // console.log("Length = "+n);
+        n=Number(n);
+        items=[]
+        for (var i=1;i<=n;i++)
+        {
+            console.log("Display");
+            const data = await contract.getStudentFromID(i);
+            console.log(data);
+            if (data.got == false)
+            {
+                let item = {
+                    address:data.stu_address,
+                    name:data.name,
+                    cgpa:data.cgpa,
+                    donor:data.donor,
+                    total:data.totalAmount,
+                 }
+                 items.push(item);
+                 console.log(item);
+            }
             
-        // }
-        // console.log("before");
-        // setStudent(items);
-        // // console.log(student);
+        }
+        console.log("before");
+        setStudent(items);
+        console.log(student);
     }
 
     return (

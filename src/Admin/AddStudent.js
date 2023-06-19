@@ -27,9 +27,9 @@ const Form = () =>{
       alert("Connect to wallet!");
     }
 
-    // await contract.addStudent(address,name,cgpa,amount);
+    await contract.addStudent(address,name,cgpa,amount);
     var n = await contract.getRegisteredCount();
-    console.log(n);
+    // console.log(n);
   
     setLoading(false);
     navigate(-1);

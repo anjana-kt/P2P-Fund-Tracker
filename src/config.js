@@ -1,1 +1,1 @@
-export const p2pAddress = "0x5FbDB2315678afecb367f032d93F642f64180aa3"
+export const p2pAddress = "0x3EAcc728677B5a1cCB5d346D8127186De3ee4230"

@@ -1,3 +1,4 @@
+const { ethers } = require("hardhat");
 const hre = require("hardhat");
 
 async function main() {
@@ -17,6 +18,8 @@ async function main() {
   // k= await pp.awardScholarship('0x8626f6940E2eb28930eFb4CeF49B2d1F2C9C1199',10)
   // k= await pp.withdraw();
   k= await pp.getStudentFromId(2);
+  const options = {value:ethers.utils.parseEther("0.0001")};
+  k= await pp.payVendor("0x15d34AAf54267DB7D7c367839AAf71A00a2C6A65",10);
   console.log(k.name);
 }
 
