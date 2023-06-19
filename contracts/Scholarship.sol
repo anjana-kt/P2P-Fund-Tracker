@@ -21,6 +21,7 @@ contract Scholarship {
 
     mapping (address => Student) public registeredStudents;
     mapping (address => Sponsor) public sponsors;
+    mapping (uint256 => address) public studentList;
 
     address public owner;
 
@@ -32,7 +33,7 @@ contract Scholarship {
     event ScholarshipAwarded(address indexed student, address indexed sponsor, uint256 amount);
 
     constructor() {
-        owner = msg.sender;
+        owner = payable(msg.sender);
     }
 
     modifier onlyOwner() {
@@ -52,9 +53,15 @@ contract Scholarship {
 
     function addStudent(address _student,string memory name, string memory cgpa, uint256 totalAmount) public onlyOwner returns(uint256) {
         isStudent[_student] = true;
+        registerCount+=1;
         Student memory reg = Student(registerCount, address(0), name, cgpa, 0, totalAmount);
         registeredStudents[_student]=reg;
+        studentList[registerCount]=_student;
         return 0;
+    }
+
+    function getRegisteredCount() public view returns (uint256) {
+        return registerCount;
     }
 
     function addSponsor(address _sponsor) public onlyOwner {

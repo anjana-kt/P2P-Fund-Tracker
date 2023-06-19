@@ -1,13 +1,24 @@
 import connectWallet from './utils/Connect'
-import { Routes,Route, Link } from 'react-router-dom';
-import { useEffect } from 'react';
+import { Routes,Route, Link, useNavigate } from 'react-router-dom';
+import { useEffect,useState } from 'react';
 import {FaPlus,FaSearch} from 'react-icons/fa' 
 import AddFund from "./Sponsor-Pages/AddFund"
-const Sponsor = ()=>{
 
-    useEffect(()=>{
-        connectWallet();
-    })
+
+
+const Sponsor = ()=>{
+    const navigate=useNavigate();
+
+
+    const [currentAccount, setCurrentAccount] = useState("");
+
+    useEffect(() => {
+        (window).ethereum .request({ method: "eth_requestAccounts", })
+    .then((accounts) => { setCurrentAccount(accounts[0]);console.log(accounts[0]); }) 
+    .catch((error) => { navigate('/') });
+    
+    }, [])
+
     
     return(
         <>

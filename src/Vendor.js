@@ -1,13 +1,21 @@
-import { useEffect } from "react";
+import { useEffect,useState } from "react";
 import connectWallet from "./utils/Connect";
 import {FaMoneyCheckAlt,FaHistory} from 'react-icons/fa';
-import { Routes,Route, Link } from 'react-router-dom';
+import { Routes,Route, Link,useNavigate} from 'react-router-dom';
 
 const Vendor = ()=>{
     
-    useEffect(()=>{
-        connectWallet();
-    });
+    const navigate=useNavigate();
+
+
+    const [currentAccount, setCurrentAccount] = useState("");
+
+    useEffect(() => {
+        (window).ethereum .request({ method: "eth_requestAccounts", })
+    .then((accounts) => { setCurrentAccount(accounts[0]);console.log(accounts[0]); }) 
+    .catch((error) => { navigate('/') });
+    
+    }, [])
 
     return(
         <>

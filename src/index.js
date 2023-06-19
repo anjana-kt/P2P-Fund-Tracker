@@ -8,10 +8,12 @@ import Sponsor from './Sponsor'
 import Reciever from './Reciever'
 import Vendor from './Vendor'
 import AddFund from './Sponsor-Pages/AddFund'
+import Admin from './Admin'
 import Monitor from './Sponsor-Pages/Monitor'
 import History from './Vendors-Pages/History'
 import Pay from './Reciever-Pages/Pay'
 import RHistory from './Reciever-Pages/History'
+import AddStudent from './Admin/AddStudent'
 
 document.title="Fund Track";
 
@@ -20,10 +22,12 @@ export default function App() {
     <BrowserRouter>
       <Routes>
           <Route index element={<Home />}/>
+          <Route path="admin" element={<Admin/> }/>
+          <Route path='admin/add-student' element={<AddStudent/>} />
           <Route path="sponsor" element={<Sponsor />} />
           <Route path="reciever" element={<Reciever />} />
-          {/* <Route path="vendor" element={<Vendor />} /> */}
-          <Route path="vendor" element={<History/> }/>
+          <Route path="vendor" element={<Vendor />} />
+          {/* <Route path="vendor" element={<History/> }/> */}
           <Route path='sponsor/add-fund' element={<AddFund/>} />
           <Route path='sponsor/monitor' element={<Monitor/>} />
           <Route path='vendor/history' element={<History/>} />
