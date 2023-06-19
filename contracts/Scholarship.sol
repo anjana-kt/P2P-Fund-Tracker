@@ -7,11 +7,13 @@ contract Scholarship {
 
     struct Student{
         uint256 id;
+        address stu_address;
         address donor;
         string name;
         string cgpa;
         uint256 received;
         uint256 totalAmount;
+        bool got;
     }
 
     struct Sponsor{
@@ -52,18 +54,22 @@ contract Scholarship {
     }
 
     function addStudent(address _student,string memory name, string memory cgpa, uint256 totalAmount) public onlyOwner returns(uint256) {
+        require(!isStudent[_student],"This student is already registered");
         isStudent[_student] = true;
         registerCount+=1;
-        Student memory reg = Student(registerCount, address(0), name, cgpa, 0, totalAmount);
+        Student memory reg = Student(registerCount, _student,address(0), name, cgpa, 0, totalAmount,false);
         registeredStudents[_student]=reg;
         studentList[registerCount]=_student;
         return 0;
     }
 
-    function getRegisteredCount() public view returns (uint256) {
+    function getRegisteredCount() public view returns (uint) {
         return registerCount;
     }
-
+    function getStudentFromId(uint256 id) public view returns (Student memory){
+        address temp = studentList[id];
+        return registeredStudents[temp];
+    }
     function addSponsor(address _sponsor) public onlyOwner {
         isSponsor[_sponsor] = true;
     }
